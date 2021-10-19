@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun login(view: android.view.View) {
-        val intent = Intent(this,SignInActivity::class.java)
+        val intent = Intent(this,LoginActivity::class.java)
         startActivity(intent)
     }
 }
