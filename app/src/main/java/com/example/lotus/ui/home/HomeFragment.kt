@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.RecyclerView
 import com.example.lotus.R
 import com.example.lotus.databinding.FragmentHomeBinding
 
@@ -21,4 +22,6 @@ class HomeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_home,container,false)
         return root
     }
+    val feel_recycler:RecyclerView=root.findViewById(R.id.feel_rec)
+    feel_recycler.adapter=FeelRecycler(requireContext(),MyFeel().list)
 }
