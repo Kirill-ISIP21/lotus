@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lotus.MyFeel
 import com.example.lotus.R
 import com.example.lotus.databinding.FragmentHomeBinding
+import recadapters.FeelRecycler
 
 class HomeFragment : Fragment() {
 
@@ -20,8 +22,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_home,container,false)
+        val feel_recycler: RecyclerView=root.findViewById(R.id.feel_rec)
+        feel_recycler.adapter= FeelRecycler(requireContext(), MyFeel().list)
         return root
     }
-    val feel_recycler:RecyclerView=root.findViewById(R.id.feel_rec)
-    feel_recycler.adapter=FeelRecycler(requireContext(),MyFeel().list)
 }

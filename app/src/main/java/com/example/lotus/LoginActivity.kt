@@ -1,5 +1,6 @@
 package com.example.lotus
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
@@ -18,7 +19,9 @@ class LoginActivity : AppCompatActivity() {
     fun signin(view: android.view.View) {
         if (email.text.toString().isNotEmpty()&&password.text.toString().isNotEmpty())
         {
-
+            val intent = Intent(this, MenuActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         else
         {
